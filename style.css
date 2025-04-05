@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 10px 50px ;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    align-content: center;
+   
+}
+body{
+    width: 90%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.Container{
+    text-align: center;
+    color:black;
+    background-color: rgb(200, 226, 250);
+    
+}
+.Container .btn{
+ display: flex;
+ gap: 25px;
+}
+.btn a{
+    text-align: center;
+    color: black;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0.1rem 0.1rem 0.1rem black; 
+
+}
+ 
+
