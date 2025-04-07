@@ -23,6 +23,7 @@ body{
 .Container .btn{
  display: flex;
  gap: 25px;
+ 
 }
 .btn a{
     text-align: center;
@@ -33,5 +34,54 @@ body{
     box-shadow: 0.1rem 0.1rem 0.1rem black; 
 
 }
- 
+p
+{
+    text-align: center;
+    font-weight: bold;
+}
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .balloon {
+    width: 30px;
+    height: 40px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp 4s ease-in forwards;
+    cursor: pointer;
+  }
+
+  .emoji {
+    position: absolute;
+    font-size: 24px;
+    animation: floatEmoji 1s ease-out forwards;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    to {
+      transform: translateY(-120vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes floatEmoji {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
 
