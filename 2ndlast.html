@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="Container">
+    
+ <h1>Wow</h1>
+ <p>You Successfully cleared the quiz </p>
+ <img src="Fairy Tale Fun GIF by KiKA.gif" width="400px" alt="Swag" >
+ <br>
+ <button onclick="releaseBalloons()">🎈 Press the Button</button>
+ 
+ <audio id="Birthdaysong" src="happy-birthday-322777.mp3" preload="auto"></audio>
+
+ <script>
+   function releaseBalloons() {
+     for (let i = 0; i < 100; i++) {
+       const balloon = document.createElement('div');
+       balloon.classList.add('balloon');
+
+       const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#D57DFF'];
+       balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+       balloon.style.left = Math.random() * 100 + 'vw';
+       balloon.style.animationDelay = Math.random() * 0.5 + 's';
+       balloon.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.2)';
+
+       // Add pop on click
+       balloon.addEventListener('click', function () {
+        
+         playBirthdaysong();
+         showEmoji(balloon);
+         balloon.remove();
+       });
+
+       document.body.appendChild(balloon);
+
+       balloon.addEventListener('animationend', () => {
+         balloon.remove();
+       });
+     }
+   }
+
+
+   
+   function playBirthdaysong() {
+     const sound = document.getElementById('Birthdaysong');
+     sound.currentTime = 0;
+     sound.play();
+   }
+
+   function showEmoji(balloon) {
+     const emoji = document.createElement('div');
+     emoji.className = 'emoji';
+     emoji.textContent = '🎉';
+     emoji.style.left = balloon.style.left;
+     emoji.style.top = balloon.getBoundingClientRect().top + 'px';
+
+     document.body.appendChild(emoji);
+
+     setTimeout(() => emoji.remove(), 1000);
+   }
+ </script>   
+ <h1>Happy Birthday To You </h1>
+ </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
